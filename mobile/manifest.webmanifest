@@ -1,0 +1,9 @@
+{
+  "name": "Forge Agent Mobile",
+  "short_name": "Forge Mobile",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0c0f14",
+  "theme_color": "#101318",
+  "description": "Phone companion for controlling Forge Agent on your PC."
+}

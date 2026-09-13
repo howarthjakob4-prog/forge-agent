@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#101318">
+  <title>Forge Agent Mobile</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div>
+        <p class="eyebrow">PROJECT NOVA TOOLING</p>
+        <h1>Forge Agent Mobile</h1>
+      </div>
+      <span id="statusBadge" class="badge offline">Offline</span>
+    </header>
+
+    <section class="card" id="pairCard">
+      <h2>Connect to your PC</h2>
+      <p>Enter the 6-digit PIN shown in the Forge Agent terminal on your computer.</p>
+      <div class="row">
+        <input id="pin" inputmode="numeric" maxlength="6" autocomplete="one-time-code" placeholder="123456" aria-label="Forge Mobile PIN">
+        <button id="connectBtn">Connect</button>
+      </div>
+      <p id="pairMessage" class="muted"></p>
+    </section>
+
+    <section class="card hidden" id="controlCard">
+      <div class="cardTitleRow">
+        <div>
+          <h2>Agent Control</h2>
+          <p id="projectPath" class="muted"></p>
+        </div>
+        <button id="disconnectBtn" class="ghost">Disconnect</button>
+      </div>
+
+      <label for="task">Task</label>
+      <textarea id="task" rows="6" placeholder="Example: Inspect Jarvis, find the startup bug, fix it, and run the tests."></textarea>
+
+      <div class="grid">
+        <div>
+          <label for="model">Browser AI</label>
+          <select id="model">
+            <option value="deepseek">DeepSeek</option>
+            <option value="gemini">Gemini</option>
+          </select>
+        </div>
+        <div class="actions">
+          <button id="runBtn" class="primary">Run Task</button>
+          <button id="stopBtn" class="danger" disabled>Stop</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card hidden" id="jobCard">
+      <div class="cardTitleRow">
+        <div>
+          <h2>Current Job</h2>
+          <p id="jobMeta" class="muted">No task yet.</p>
+        </div>
+        <button id="refreshBtn" class="ghost">Refresh</button>
+      </div>
+      <pre id="log">Waiting for a task…</pre>
+    </section>
+
+    <section class="card hidden" id="installCard">
+      <h2>Install on Android</h2>
+      <p>Open your browser menu and choose <strong>Add to Home screen</strong> or <strong>Install app</strong>. Forge Agent still runs on your PC; this phone app is the controller.</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
