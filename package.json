@@ -9,6 +9,7 @@
   },
   "scripts": {
     "start": "node src/index.js",
+    "mobile": "node src/mobile-server.js",
     "postinstall": "node src/postinstall.js",
     "debug": "node src/index.js --debug",
     "calibrate": "node src/calibrate.js",
@@ -38,6 +39,7 @@
   },
   "files": [
     "src/",
+    "mobile/",
     "README.md",
     "LICENSE"
   ],
